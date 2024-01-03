@@ -21,15 +21,34 @@ class CoinTile extends StatelessWidget {
         borderRadius: BorderRadius.circular(8),
       ),
       child: ListTile(
-        leading: SvgPicture.asset(
-          'assets/$id.svg',
-          height: 25,
-        ),
-        title: Text(name),
-        trailing: Text(
-          price.toString(),
-        ),
-      ),
+          leading: SvgPicture.asset(
+            'assets/$id.svg',
+            height: 25,
+          ),
+          title: Text(
+            name,
+            style: const TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          trailing: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                price.toString(),
+                style: const TextStyle(
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+              const SizedBox(
+                width: 10,
+              ),
+              SvgPicture.asset(
+                'assets/usd-cryptocurrency.svg',
+                height: 25,
+              ),
+            ],
+          )),
     );
   }
 }

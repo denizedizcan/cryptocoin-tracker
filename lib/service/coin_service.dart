@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'package:crypto_list/models/coin_model.dart';
-
+import 'package:crypto_list/utils/global_variables.dart';
+import 'package:crypto_list/utils/variable.dart';
 import 'package:http/http.dart' as http;
 
 class CoinService {

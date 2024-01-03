@@ -13,4 +13,3 @@ const Map<String, dynamic> coinVariablesList = {
 
 const String baseUrl =
     'https://pro-api.coinmarketcap.com/v2/cryptocurrency/quotes/latest';
-const String apiKey = '';

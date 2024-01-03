@@ -1,4 +1,6 @@
 import 'package:isar/isar.dart';
+import 'dart:math';
+
 part 'coin_model.g.dart';
 
 @collection
@@ -13,7 +15,8 @@ class Coin {
   factory Coin.fromJson(Map<String, dynamic> json, String coinId) {
     return Coin(
       name: json['data'][coinId]['name'],
-      price: json['data'][coinId]['quote']['USD']['price'].toDouble(),
+      price:
+          roundDouble(json['data'][coinId]['quote']['USD']['price'].toDouble()),
       coinId: coinId,
     );
   }
@@ -24,7 +27,8 @@ class Coin {
     for (var coinId in resultKeys) {
       response.add(Coin(
         name: json['data']![coinId]['name'],
-        price: json['data']![coinId]['quote']['USD']['price'].toDouble(),
+        price: roundDouble(
+            json['data']![coinId]['quote']['USD']['price'].toDouble()),
         coinId: coinId,
       ));
     }
@@ -36,4 +40,20 @@ class Coin {
         'price': price,
         'coinId': coinId,
       };
+}
+
+double roundDouble(double value) {
+  int places = 2;
+  if (value < 1.0) {
+    String stringValue = value.toString();
+    int dotIndex = stringValue.indexOf('.');
+    for (int i = dotIndex; i < stringValue.length; i++) {
+      if (stringValue[i] != '0' && stringValue[i] != '.') {
+        places = dotIndex + i;
+        break;
+      }
+    }
+  }
+  num mod = pow(10.0, places);
+  return ((value * mod).round().toDouble() / mod);
 }

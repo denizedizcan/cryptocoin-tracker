@@ -3,6 +3,7 @@ import 'package:crypto_list/utils/global_variables.dart';
 import 'package:crypto_list/models/coin_model.dart';
 import 'package:crypto_list/service/isar_service.dart';
 import 'package:crypto_list/utils/utils.dart';
+import 'package:crypto_list/widgets/coin_search_delegate.dart';
 import 'package:crypto_list/widgets/coin_tile.dart';
 import 'package:crypto_list/widgets/drawer.dart';
 import 'package:flutter/material.dart';

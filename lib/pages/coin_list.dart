@@ -108,6 +108,7 @@ class _CoinListState extends State<CoinList> {
       backgroundColor: Theme.of(context).colorScheme.background,
       floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
       floatingActionButton: FloatingActionButton(
+        foregroundColor: Theme.of(context).colorScheme.inverseSurface,
         onPressed: () async {
           var query = await showSearch(
             context: context,

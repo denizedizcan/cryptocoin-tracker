@@ -1,5 +1,8 @@
 # CryptoCoin Tracker
 
+![App Screenshot](home_page.png?raw=true)
+
+
 CryptoCoin Tracker is a mobile application developed using Flutter. With this app, you can track personal cryptocurrency prices, add and remove coins from the list. Additionally, it stands out with its user-friendly interface and various features.
 
 ## Used Packages
